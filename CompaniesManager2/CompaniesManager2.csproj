@@ -124,17 +124,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\CompaniesDatabase.mdf" />
-    <Content Include="App_Data\CompaniesDatabase2.mdf" />
-    <Content Include="App_Data\CompaniesDatabase2_log.ldf">
-      <DependentUpon>CompaniesDatabase2.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Data\CompaniesDatabase3.mdf" />
     <Content Include="App_Data\CompaniesDatabase3_log.ldf">
       <DependentUpon>CompaniesDatabase3.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\CompaniesDatabase_log.ldf">
-      <DependentUpon>CompaniesDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -145,6 +137,10 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Code\TreeView.cshtml" />
+    <None Include="Properties\PublishProfiles\vovk.pubxml" />
+    <None Include="Properties\PublishProfiles\WebProject2 %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\WebProject2 %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\WebProject2.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />

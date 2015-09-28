@@ -18,7 +18,14 @@ namespace CompaniesManager2.Controllers
         }
         public ActionResult GetTree()
         {
-            CompaniesTree ctv = new CompaniesTree(new TreeViewModel());
+            CompaniesTree ctv = null;
+            try { 
+            ctv = new CompaniesTree(new TreeViewModel());
+            }
+            catch (Exception e)
+            {
+                return Content(e.ToString());
+            }
             return View(ctv);
         }
         [HttpGet]

@@ -25,13 +25,14 @@ namespace CompaniesManager2.Models
         {
             headNodes = new List<CompanyNode>();
 
-            // find company without parent company
-            foreach (CompaniesTreeViewTable c in db.CompaniesTreeViewTable)
-            {
-                if (db.CompaniesTreeViewTable.Find(c.ParentId) == null)
-                    headNodes.Add(new CompanyNode(null, c, db));
-            }
-
+         List < CompaniesTreeViewTable> cps=   db.CompaniesTreeViewTable.Where(s => s.ParentId == 0).ToList();
+                // find company without parent company
+                foreach (CompaniesTreeViewTable c in cps)
+                {
+                    //if (db.CompaniesTreeViewTable.Find(c.ParentId) == null)
+                        headNodes.Add(new CompanyNode(null, c, db));
+                }
+           
         }
     }
 }
