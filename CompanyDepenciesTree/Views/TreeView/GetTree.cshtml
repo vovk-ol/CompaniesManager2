@@ -53,7 +53,7 @@
         @if (Model != null && Model.ChildCount > 0)
         {
             <ul>
-                @TreeView.GetTreeView(Model.headNodes)
+                @TreeView.GetTreeView(Model.rootNodes)
             </ul>
         }
     </div>

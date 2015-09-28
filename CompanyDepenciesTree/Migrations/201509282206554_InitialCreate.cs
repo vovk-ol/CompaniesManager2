@@ -3,7 +3,7 @@ namespace CompanyDepenciesTree.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class MigrationUpdate : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -12,7 +12,7 @@ namespace CompanyDepenciesTree.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(maxLength: 50, fixedLength: true),
+                        Name = c.String(maxLength: 100),
                         Earning = c.Int(),
                         ParentId = c.Int(),
                     })

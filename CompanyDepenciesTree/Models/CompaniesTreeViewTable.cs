@@ -11,7 +11,7 @@ namespace CompanyDepenciesTree.Models
     {
         public int Id { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string Name { get; set; }
 
         public int? Earning { get; set; }

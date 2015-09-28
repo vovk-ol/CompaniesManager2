@@ -10,8 +10,9 @@ namespace CompanyDepenciesTree.Models
         private CompanyNode parent;
         public List<CompanyNode> childs;
         private CompanyEntity company;
-
         private int totallEarning;
+
+        #region properties
 
         public int TotallEarning
         {
@@ -31,6 +32,8 @@ namespace CompanyDepenciesTree.Models
         {
             get
             {
+                if (company.Earning == null)
+                    return 0;
                 return (int)company.Earning;
             }
         }
@@ -41,6 +44,8 @@ namespace CompanyDepenciesTree.Models
                 return company.Id;
             }
         }
+
+        #endregion
 
         public CompanyNode(CompanyNode parent, CompanyEntity company, TreeViewModel db)
         {
@@ -66,6 +71,7 @@ namespace CompanyDepenciesTree.Models
         private void AddValueToEarning(int value)
         {
             totallEarning += value;
+            //recursive increasing of Earning
             if (parent != null)
                 parent.AddValueToEarning(value);
         }

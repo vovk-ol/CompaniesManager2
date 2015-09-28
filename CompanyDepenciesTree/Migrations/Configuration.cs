@@ -30,6 +30,8 @@ namespace CompanyDepenciesTree.Migrations
               new CompanyEntity { Name = "Google", Earning = 1000, ParentId = 0 },
               new CompanyEntity { Name = "AndroinDistributorCompany", Earning = 10, ParentId = 6 },
               new CompanyEntity { Name = "GoogleElectroCar", Earning = 35, ParentId = 6 },
+              new CompanyEntity { Name = "AutoPilot Systems", Earning = 22, ParentId = 8 },
+              new CompanyEntity { Name = "Wheel Production", Earning = 13, ParentId = 8 },
               new CompanyEntity { Name = "Apple", Earning = 1000, ParentId = 0 }
 
             );

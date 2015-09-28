@@ -16,9 +16,6 @@ namespace CompanyDepenciesTree.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CompanyEntity>()
-                .Property(e => e.Name)
-                .IsFixedLength();
         }
     }
 }

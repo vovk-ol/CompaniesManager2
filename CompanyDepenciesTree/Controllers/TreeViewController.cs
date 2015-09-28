@@ -19,13 +19,15 @@ namespace CompanyDepenciesTree.Controllers
         public ActionResult GetTree()
         {
             CompaniesTree ctv = null;
-            //try { 
-            ctv = new CompaniesTree(new TreeViewModel());
-            //}
-            //catch (Exception e)
-            //{
-            //    return Content(e.ToString());
-            //}
+            try
+            {
+                //build companies tree
+                ctv = new CompaniesTree(new TreeViewModel());
+            }
+            catch (Exception e)
+            {
+                return Content(e.ToString());
+            }
             return View(ctv);
         }
         [HttpGet]
@@ -47,7 +49,7 @@ namespace CompanyDepenciesTree.Controllers
         }
         [HttpPost]
         public ActionResult EditCompany(
-            [Bind(Include = "Id, Name,AnnualEarning,ParentId")] CompanyEntity comp)
+            [Bind(Include = "Id, Name,Earning,ParentId")] CompanyEntity comp)
         {
 
             if (ModelState.IsValid)
@@ -72,7 +74,7 @@ namespace CompanyDepenciesTree.Controllers
         }
         [HttpPost]
         public ActionResult CreateCompany(
-           [Bind(Include = "Id, Name,AnnualEarning,ParentId")] CompanyEntity comp)
+           [Bind(Include = "Id, Name,Earning,ParentId")] CompanyEntity comp)
         {
             if (ModelState.IsValid)
             {
@@ -108,7 +110,7 @@ namespace CompanyDepenciesTree.Controllers
             if (comp == null)
                 return HttpNotFound();
 
-            //get childs
+            //get childs for change it's parent
             IQueryable<CompanyEntity> childs = db_cs.CompaniesTreeViewTable.Where(c => c.ParentId == comp.Id);
             if (childs.Count() > 0)
                 //move childs to up level in tree
